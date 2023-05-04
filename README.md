@@ -1,4 +1,5 @@
 ## audio-context-router
+Easy & simple multi-channel audio manipulation with Web Audio
 
 ### Features
 - Easy playback of remote and local `MediaStream` objects
@@ -109,4 +110,45 @@ const analyser = context.createAnalyser();
 
 source.connect(analyser);
 ```
+
+Isolate single channel from `MediaStream` object:
+```js
+const stereoStream = new MediaStream();
+const monoStream = Audio.getChannelStream(stereoStream, 2);
+
+// ... Do something with new mono stream
+```
+
+### Documentation
+
+#### API
+
+```js
+// AudioRouter
+setConfiguration(config)
+addInstance(groupId, trackId, useAudioElement): AudioGraph
+getInstanceGroup(groupId): [AudioGraph]
+getInstance(groupId, trackId): AudioGraph
+getContext(): AudioContext
+getChannelStream(stream, channel): MediaStream
+
+// AudioGraph
+getInputChannels(): [number]
+getOutputChannels(): [number]
+getNode(key, channel): AudioNode
+setNode(key, node, channel): AudioNode
+setStream(stream)
+setGain(value, channel)
+play(channel)
+stop(channel)
+mute(channel)
+unmute(channel)
+disconnect()
+```
+
+### License
+
+audio-context-router (c) by Jaden Dessureault
+
+audio-context-router is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 

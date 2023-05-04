@@ -24,7 +24,8 @@ Audio.setConfiguration({
 });
 ```
 
-Starting audio playback:
+Starting audio playback (connecting the graph):
+![Simple Playback](./diagrams/graph-1.png)
 
 ```js
 const audio = Audio.addInstance('james', 'guitar');
@@ -37,18 +38,16 @@ audio.setStream(stream);
 audio.play();
 ```
 
-![Simple Playback](./diagrams/graph-1.png)
-
 
 Stopping audio playback:
+![Simple Stop Playback](./diagrams/graph-5.png)
+
 ```js
 const audio = Audio.getInstance('james', 'guitar');
 
 // Disconnect gains from merger to stop audio
 audio.stop();
 ```
-
-![Simple Stop Playback](./diagrams/graph-5.png)
 
 
 Disconnecting audio graph instance:
@@ -62,6 +61,7 @@ audio.disconnect();
 
 
 Modifying audio gain (volume):
+![Audio gain diagram](./diagrams/graph-2.png)
 
 ```js
 const audio = Audio.getInstance('james', 'guitar');
@@ -72,8 +72,6 @@ audio.setGain(0.5);
 // Set gain of right channel ([0, 1] => [L, R])
 audio.setGain(0.5, 1);
 ```
-
-![Audio gain diagram](./diagrams/graph-2.png)
 
 
 Muting audio by channel:
@@ -98,6 +96,7 @@ const audioNode = graph.getNode('splitter');
 
 
 Adding custom `AudioNode` into the graph:
+![Analyzer Node](./diagrams/graph-6.png)
 
 ```js
 const graph = Audio.getInstance('james', 'guitar');

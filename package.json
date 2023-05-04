@@ -1,7 +1,7 @@
 {
   "name": "audio-context-router",
   "version": "1.0.0",
-  "description": "Simple multi-channel audio playback and manipulation with Web Audio",
+  "description": "Simple multi-channel audio playback, routing, and manipulation with Web Audio.",
   "main": "dist/index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src",

@@ -1,4 +1,3 @@
-import { INPUT_CHANNELS, OUTPUT_CHANNELS } from '../constants';
 import { createAudioElement, mapChannels } from '../utils';
 
 class AudioGraph {
@@ -63,7 +62,7 @@ class AudioGraph {
   setNode(key, node, channel) {
     const channelIndex = this._getInputChannelIndex(channel);
 
-    return this._setNode(key, node, channel)
+    return this._setNode(key, node, channelIndex);
   }
 
   disconnect() {

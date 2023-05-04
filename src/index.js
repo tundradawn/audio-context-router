@@ -26,7 +26,7 @@ class AudioRouter {
      *    [talkback]: <AudioGraph>,
      *    [juno]: <AudioGraph>
      *   ],
-     *   [client 1]: [
+     *   [client 2]: [
      *    [talkback]: <AudioGraph>,
      *    [organ]: <AudioGraph>
      *   ],

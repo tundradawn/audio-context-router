@@ -89,13 +89,14 @@ audio.unmute(2);
 ```
 
 
-#### Getting an `AudioNode`. By default, all graphs contain `source`, `splitter`, `merger`, `[gain]`:
+#### Getting an `AudioNode`:
 
 ```js
 const graph = Audio.getInstance('james', 'guitar');
 
 const audioNode = graph.getNode('splitter');
 ```
+Note: By default, all graphs contain `source`, `splitter`, `merger`, `[gain]` however this method can also be used to retrieve custom nodes.
 
 
 #### Adding custom `AudioNode` into the graph:

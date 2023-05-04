@@ -39,8 +39,8 @@ audio.setStream(stream);
 // Playback audio
 audio.play();
 ```
-Note: If a remote stream is being supplied (eg. via WebRTC), you'll likely need to use the `useAudioElement` option when calling `addInstance`. This is because Chromium has issues with remote streams and the Web Audio API ([Learn More](https://bugs.chromium.org/p/chromium/issues/detail?id=121673)).
 ![Simple Playback](./diagrams/graph-1.png)
+Note: If a remote stream is being supplied (eg. via WebRTC), you'll likely need to use the `useAudioElement` option when calling `addInstance`. This is because Chromium has issues with remote streams and the Web Audio API ([Learn More](https://bugs.chromium.org/p/chromium/issues/detail?id=121673)).
 
 
 #### Stopping audio playback:
@@ -112,7 +112,7 @@ const graph = Audio.getInstance('james', 'guitar');
 
 const audioNode = graph.getNode('splitter');
 ```
-Note: By default, all graphs contain `source`, `splitter`, `merger`, `[gain]` however this method can also be used to retrieve custom nodes.
+Note: By default, all graphs contain `source`, `splitter`, `merger`, and `[gain]` nodes however this method can also be used to retrieve custom nodes.
 
 
 #### Adding custom `AudioNode` into the graph:

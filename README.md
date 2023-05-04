@@ -28,7 +28,6 @@ Audio.setConfiguration({
 Note: In most cases this doesn't need to be called because Chromium only supports stereo (2-channel) inputs and outputs, however hacks can be used to introduce multi-channel support ([Learn more](https://support.google.com/chrome/thread/21248703/5-1-surround-sound-in-chrome?hl=en)).
 
 #### Starting audio playback (connecting the graph):
-![Simple Playback](./diagrams/graph-1.png)
 
 ```js
 const audio = Audio.addInstance('james', 'guitar');
@@ -41,17 +40,17 @@ audio.setStream(stream);
 audio.play();
 ```
 Note: If a remote stream is being supplied (eg. via WebRTC), you'll likely need to use the `useAudioElement` option when calling `addInstance`. This is because Chromium has issues with remote streams and the Web Audio API ([Learn More](https://bugs.chromium.org/p/chromium/issues/detail?id=121673)).
+![Simple Playback](./diagrams/graph-1.png)
 
 
 #### Stopping audio playback:
-![Simple Stop Playback](./diagrams/graph-5.png)
-
 ```js
 const audio = Audio.getInstance('james', 'guitar');
 
 // Disconnect gains from merger to stop audio
 audio.stop();
 ```
+![Simple Stop Playback](./diagrams/graph-5.png)
 
 
 #### Disconnecting audio graph instance:
@@ -65,8 +64,6 @@ audio.disconnect();
 
 
 #### Modifying audio gain (volume):
-![Audio gain diagram](./diagrams/graph-2.png)
-
 ```js
 const audio = Audio.getInstance('james', 'guitar');
 
@@ -76,6 +73,7 @@ audio.setGain(0.5);
 // Set gain of right channel
 audio.setGain(0.5, 2);
 ```
+![Audio gain diagram](./diagrams/graph-2.png)
 
 
 #### Muting audio by channel:
@@ -90,6 +88,7 @@ audio.mute(2);
 audio.unmute(2);
 ```
 
+
 #### Getting an `AudioNode`. By default, all graphs contain `source`, `splitter`, `merger`, `[gain]`:
 
 ```js
@@ -100,8 +99,6 @@ const audioNode = graph.getNode('splitter');
 
 
 #### Adding custom `AudioNode` into the graph:
-![Analyzer Node](./diagrams/graph-6.png)
-
 ```js
 const graph = Audio.getInstance('james', 'guitar');
 const context = Audio.getContext();
@@ -113,6 +110,8 @@ const analyser = context.createAnalyser();
 
 source.connect(analyser);
 ```
+![Analyzer Node](./diagrams/graph-6.png)
+
 
 #### Isolate single channel from `MediaStream` object:
 ```js

@@ -5,6 +5,7 @@ Easy & simple multi-channel audio manipulation with Web Audio
 - Easy playback of remote and local `MediaStream` objects
 - Designed to allow for multiple tracks per user-group
 - Simple channel-specific gain controls
+- Supports easy insertion of additonal `AudioNode` objects.
 
 ### Getting Started
 > Note: This hasn't been published yet
@@ -13,7 +14,7 @@ Easy & simple multi-channel audio manipulation with Web Audio
 import Audio from 'audio-context-router';
 ```
 
-Setting the configuration. In most cases this doesn't need to be called because Chromium only supports stereo (2-channel) inputs and outputs.
+Setting the configuration. In most cases this doesn't need to be called because Chromium only supports stereo (2-channel) inputs and outputs, however hacks can be used to introduce multi-channel support ([Learn more](https://support.google.com/chrome/thread/21248703/5-1-surround-sound-in-chrome?hl=en)).
 ```js
 Audio.setConfiguration({
   input: {

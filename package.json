@@ -1,0 +1,40 @@
+{
+  "name": "audio-context-router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src",
+    "build": "bash ./script-copy.sh && ./node_modules/.bin/babel src -d dist",
+    "postpublish": "cd dist && cp -r package.json .."
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadnco/audio-context-router.git"
+  },
+  "author": "Jaden Dessureault <hello@jaden.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadnco/audio-context-router/issues"
+  },
+  "homepage": "https://github.com/jadnco/audio-context-router#readme",
+  "devDependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.9.0",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/preset-env": "7.9.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "dependencies": {
+    "lodash": "4.17.20"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

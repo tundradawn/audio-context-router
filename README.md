@@ -40,6 +40,8 @@ audio.setStream(stream);
 audio.play();
 ```
 
+Note: If a remote stream is being supplied (eg. via WebRTC), you'll likely need to use the `useAudioElement` option when calling `addInstance`. This is because Chromium has issues with remote streams and the Web Audio API ([Learn More](https://bugs.chromium.org/p/chromium/issues/detail?id=121673)).
+
 
 Stopping audio playback:
 ![Simple Stop Playback](./diagrams/graph-5.png)

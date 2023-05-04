@@ -62,6 +62,22 @@ const audio = Audio.getInstance('james', 'guitar');
 audio.disconnect();
 ```
 
+#### Adding & manipulating multiple tracks within a group:
+
+```js
+const vocals = Audio.addInstance('james', 'vocals');
+const synth = Audio.addInstance('james', 'synth');
+
+vocals.setStream(vocalsStream);
+synth.setStream(synthStream);
+
+vocals.play();
+synth.play();
+
+vocals.setGain(0.7);
+synth.setGain(1.2);
+```
+![Audio Group diagram](./diagrams/graph-group-1.png)
 
 #### Modifying audio gain (volume):
 ```js

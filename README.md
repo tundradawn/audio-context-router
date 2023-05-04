@@ -1,11 +1,11 @@
 ## audio-context-router
-Easy & simple multi-channel audio manipulation with Web Audio
+Simple multi-channel audio playback and manipulation with Web Audio.
 
 ### Features
 - Easy playback of remote and local `MediaStream` objects
 - Designed to allow for multiple tracks per user-group
 - Simple channel-specific gain controls
-- Supports easy insertion of additonal `AudioNode` objects.
+- Supports easy insertion of additonal `AudioNode` objects
 
 ### Getting Started
 > Note: This hasn't been published yet

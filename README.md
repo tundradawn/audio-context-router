@@ -70,8 +70,8 @@ const audio = Audio.getInstance('james', 'guitar');
 // Set gain of all channels to 50%
 audio.setGain(0.5);
 
-// Set gain of right channel ([0, 1] => [L, R])
-audio.setGain(0.5, 1);
+// Set gain of right channel
+audio.setGain(0.5, 2);
 ```
 
 
@@ -81,10 +81,10 @@ Muting audio by channel:
 const audio = Audio.getInstance('james', 'guitar');
 
 // Mute R channel
-audio.mute(1);
+audio.mute(2);
 
 // Later... Unmute R channel
-audio.unmute(1);
+audio.unmute(2);
 ```
 
 Getting an `AudioNode`. By default, all graphs contain `source`, `splitter`, `merger`, `[gain]`:
